@@ -14,11 +14,12 @@ public class SQLDA
 {
     static Connection con;
     
-    public static Connection Connect(String _host,int _port,String _dataBaseName, String _user, String _password) throws SQLException
+    public static Connection Open(String _host,int _port,String _dataBaseName, String _user, String _password) throws SQLException, Exception
     {
         try
         {
-            String address = "jdbc:derby://"+_host+":"+_port+"/"+_dataBaseName;
+            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+            String address = "jdbc:sqlserver://"+_host+":"+_port+";databaseName="+_dataBaseName;
             con = DriverManager.getConnection(address, _user, _password);
             return con;
         }
