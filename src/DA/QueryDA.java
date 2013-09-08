@@ -6,13 +6,14 @@ package DA;
 
 import java.sql.*;
 import java.util.ArrayList;
+import EN.*;
 /**
  *
  * @author root
  */
 public class QueryDA 
 {
-    public static ArrayList<ArrayList<String>> ExcecuteQuery(String _query) throws Exception
+    public static ResultSetEN ExecuteQuery(String _query) throws Exception
     {
         try
         {
@@ -30,7 +31,6 @@ public class QueryDA
                 listColumnsNames.add(columnName);
             }
             
-            list.add(listColumnsNames);
             
             while(rs.next())
             {
@@ -45,8 +45,10 @@ public class QueryDA
             
             
             conn.close();
-            
-            return list;
+            ResultSetEN resulSetEN = new ResultSetEN();
+            resulSetEN.setHeaders(listColumnsNames);
+            resulSetEN.setListValues(list);
+            return resulSetEN;
             
         }
         catch(Exception e)
