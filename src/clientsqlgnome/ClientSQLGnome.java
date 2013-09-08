@@ -18,7 +18,7 @@ public class ClientSQLGnome {
     public static void main(String[] args) {
         // TODO code application logic here
         MainWindow mainWindow = new MainWindow();
-        mainWindow.setEnabled(true);
+        mainWindow.setVisible(true);
         
         
     }
