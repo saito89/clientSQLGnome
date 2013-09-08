@@ -3,7 +3,7 @@
  * and open the template in the editor.
  */
 package clientsqlgnome;
-import DA.SQLDA;
+import DA.QueryDA;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -20,8 +20,7 @@ public class ClientSQLGnome {
         // TODO code application logic here
         try
         {
-            Connection con = SQLDA.Open("190.7.192.3", 1433, "CCMPAY", "sa", "D4t42012");
-            con.close();
+            QueryDA.ExcecuteQuery("select top 1 * from Banco");
             String prueba = "hola";
         }
         catch(Exception e)
