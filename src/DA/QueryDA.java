@@ -20,25 +20,27 @@ public class QueryDA
             Connection conn = SQLDA.Open("190.7.192.3", 1433, "CCMPAY", "sa", "D4t42012");
             Statement stm = conn.createStatement();
             ResultSet rs = stm.executeQuery(_query);
-            ArrayList<ArrayList<String>> list = new ArrayList<>();
+            ArrayList<String[]> list = new ArrayList<>();
             ResultSetMetaData metaData = rs.getMetaData();
             int columns = metaData.getColumnCount();
-            ArrayList<String> listColumnsNames = new ArrayList<>();
+            String[] listColumnsNames = new String[columns];
             
+            int cou = 0;
             for(int j = 1; j <= columns; j++)
             {                
-                String columnName = metaData.getColumnName(j).toString();
-                listColumnsNames.add(columnName);
+                listColumnsNames[cou] = metaData.getColumnName(j).toString();
+                cou++;
             }
             
             
             while(rs.next())
             {
-                ArrayList<String> listRow = new ArrayList<>();
+                String [] listRow = new String[columns];
+                int count = 0;
                 for(int i = 1; i <= columns; i++)
                 {
-                    String cell = rs.getObject(i).toString();
-                    listRow.add(cell);
+                    listRow[count] = rs.getObject(i).toString();
+                    count++;
                 }
                 list.add(listRow);
             }

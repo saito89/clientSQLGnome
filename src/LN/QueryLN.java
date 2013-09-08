@@ -6,6 +6,7 @@ package LN;
 
 import DA.*;
 import EN.*;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -18,6 +19,25 @@ public class QueryLN
         try
         {
             return QueryDA.ExecuteQuery(_query);
+        }
+        catch(Exception e)
+        {
+            throw e;
+        }
+    }
+    
+    public static DefaultTableModel CreateModel(ResultSetEN _resultSetEN)
+    {
+        try
+        {
+            DefaultTableModel model = new DefaultTableModel();
+            model.setColumnIdentifiers(_resultSetEN.getHeaders());
+            for(int j = 0; j < _resultSetEN.getListValues().size();j++)
+            {                
+                model.addRow(_resultSetEN.getListValues().get(j));
+            }
+            model.fireTableDataChanged();
+            return model;
         }
         catch(Exception e)
         {

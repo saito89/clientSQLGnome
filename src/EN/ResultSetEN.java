@@ -12,34 +12,34 @@ import java.util.ArrayList;
  */
 public class ResultSetEN 
 {
-    private ArrayList<String> headers;
-    private ArrayList<ArrayList<String>> listValues;
+    private String[] headers;
+    private ArrayList<String[]> listValues;
 
     /**
      * @return the headers
      */
-    public ArrayList<String> getHeaders() {
+    public String[] getHeaders() {
         return headers;
     }
 
     /**
      * @param headers the headers to set
      */
-    public void setHeaders(ArrayList<String> headers) {
+    public void setHeaders(String[] headers) {
         this.headers = headers;
     }
 
     /**
      * @return the listValues
      */
-    public ArrayList<ArrayList<String>> getListValues() {
+    public ArrayList<String[]> getListValues() {
         return listValues;
     }
 
     /**
      * @param listValues the listValues to set
      */
-    public void setListValues(ArrayList<ArrayList<String>> listValues) {
+    public void setListValues(ArrayList<String[]> listValues) {
         this.listValues = listValues;
     }
 }
