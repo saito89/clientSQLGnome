@@ -15,17 +15,10 @@ public class ClientSQLGnome {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
         // TODO code application logic here
-        try
-        {
-            QueryLN.ExecuteQuery("select top 1 * from Banco");
-            String prueba = "hola";
-        }
-        catch(Exception e)
-        {
-            throw e;
-        }
+        MainWindow mainWindow = new MainWindow();
+        mainWindow.setEnabled(true);
         
         
     }
