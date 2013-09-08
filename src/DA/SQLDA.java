@@ -10,7 +10,7 @@ import java.sql.SQLException;
  *
  * @author erick
  */
-public class SqlDA 
+public class SQLDA 
 {
     static Connection con;
     
