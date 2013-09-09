@@ -85,7 +85,11 @@ public class QueryDA
             throw e;
         }
     }
-    
+    /**
+     * This method gets the tables from the selected schema
+     * @return
+     * @throws Exception 
+     */
     public static ArrayList<String> GetDBTables() throws Exception
     {
         try
