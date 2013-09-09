@@ -12,7 +12,9 @@ import java.util.ArrayList;
  */
 public class ResultSetEN 
 {
+    //The column headers that the result set will return
     private String[] headers;
+    //The values that the result set will return
     private ArrayList<String[]> listValues;
 
     /**

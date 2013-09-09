@@ -13,7 +13,17 @@ import java.sql.SQLException;
 public class SQLDA 
 {
     static Connection con;
-    
+    /**
+     * This method opens a connection with the specified parameters
+     * @param _host
+     * @param _port
+     * @param _dataBaseName
+     * @param _user
+     * @param _password
+     * @return
+     * @throws SQLException
+     * @throws Exception 
+     */
     public static Connection Open(String _host,int _port,String _dataBaseName, String _user, String _password) throws SQLException, Exception
     {
         try
@@ -28,7 +38,10 @@ public class SQLDA
             throw e;
         }
     }
-    
+    /**
+     * This method closes the current database connection
+     * @throws SQLException 
+     */
     public static void Close() throws SQLException
     {
         try
